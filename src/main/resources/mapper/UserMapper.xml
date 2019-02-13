@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.shenzhe.blog.dao.UserDao">
+    <sql id="BASE_TABLE">
+      user
+    </sql>
+
+    <sql id="BASE_COLUMN">
+      id,name,password
+    </sql>
+
+    <insert id="insert" parameterType="com.shenzhe.blog.entity.User" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO
+        <include refid="BASE_TABLE"/>
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            name,password,
+        </trim>
+        <trim prefix="VALUES(" suffix=")" suffixOverrides=",">
+            #{name, jdbcType=VARCHAR},#{password, jdbcType=VARCHAR},
+        </trim>
+    </insert>
+
+    <select id="selectUsers" resultType="com.shenzhe.blog.entity.User">
+        SELECT
+        <include refid="BASE_COLUMN"/>
+        FROM
+        <include refid="BASE_TABLE"/>
+    </select>
+
+    <select id="getOne" resultType="com.shenzhe.blog.entity.User">
+        SELECT
+        <include refid="BASE_COLUMN"/>
+        FROM
+        <include refid="BASE_TABLE"/>
+        WHERE id=#{id}
+    </select>
+</mapper>
