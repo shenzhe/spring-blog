@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: 8088
 spring:
   datasource:
     name: mysql_test
@@ -10,9 +10,9 @@ spring:
       filters: stat
       driver-class-name: com.mysql.cj.jdbc.Driver
       #基本属性
-      url: jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
+      url: jdbc:mysql://127.0.0.1:3306/msg_center?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
       username: root
-      password: 123456
+      password: asdf357
       #配置初始化大小/最小/最大
       initial-size: 1
       min-idle: 1
@@ -32,7 +32,7 @@ spring:
       max-pool-prepared-statement-per-connection-size: 20
   redis:
     database: 0
-    host: localhost
+    host: 127.0.0.1
     port: 6379
     jedis:
       pool:

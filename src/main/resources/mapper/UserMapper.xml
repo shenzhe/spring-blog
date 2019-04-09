@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.shenzhe.blog.dao.UserDao">
     <sql id="BASE_TABLE">
-      user
+      test.user
     </sql>
 
     <sql id="BASE_COLUMN">
